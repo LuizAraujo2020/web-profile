@@ -6,11 +6,11 @@
 }
 
 .header::after {
+    content: '';
     display: inline-block;
     position: absolute;
-    top: 1rem; 
+    top: 1rem;
     right: 1rem;
-    content: '';
     width: 2rem;
     height: 2rem;
     background-repeat: no-repeat;
@@ -25,8 +25,8 @@
 }
 
 .header .title {
-    text-align: center;
     font-family: 'Neue Machina';
+    text-align: center;
 }
 
 .info {
@@ -45,8 +45,8 @@
 }
 
 .info p::before {
-    display: inline-block;
     content: '';
+    display: inline-block;
     width: 1rem;
     height: 1rem;
     background-repeat: no-repeat;
@@ -62,35 +62,35 @@
     background-image: url('/assets/img/icons/location.svg');
 }
 
-.info .phone::before {
-    background-image: url('/assets/img/icons/phone.svg');
-}
-
 .info .email::before {
     background-image: url('/assets/img/icons/email.svg');
 }
 
-@media only screen and(min-width: 768px) {
+.info .phone::before {
+    background-image: url('/assets/img/icons/phone.svg');
+}
+
+@media only screen and (min-width: 768px) {
     .header {
         display: grid;
-        grid-template-areas: 
+        grid-template-areas:
             "photo title"
-            "photo info"
+            "photo information"
         ;
     }
-    
+
     .header .photo {
         grid-area: photo;
-        margin: auto;
+        margin: 0 auto;
     }
-    
+
     .header .title {
         grid-area: title;
         text-align: start;
-        max-width: 200px;
+        max-width: 210px;
     }
-    
+
     .header .info {
-        grid-area: info;
+        grid-area: information;
     }
 }
