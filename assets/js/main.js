@@ -43,8 +43,18 @@ function updatePortfolio(profileData) {
         `<li>
             <h3 class="title${port.github ? " github" : ""}">${port.name}</h3>
             <a href="${port.url}" target="_blank">${port.url}</a>
-        </li>`
-        ).join('')
+        </li>`).join('')
+}
+
+function updateProfessionalExperience(profileData) {
+    const professionalExperience = document.getElementById('profile.professionalExperience')
+
+    professionalExperience.innerHTML = profileData.professionalExperience.map(experience =>
+        `<li>
+            <h3 class="title github">${experience.name}</h3>
+            <h4 class="period">${experience.period}</h4>
+            <p>${experience.description}</p>
+        </li>`).join('')
 }
 
 (async () => {
@@ -54,4 +64,5 @@ function updatePortfolio(profileData) {
     updateHardskills(profileData)
     updateLanguages(profileData)
     updatePortfolio(profileData)
+    updateProfessionalExperience(profileData)
 })()
